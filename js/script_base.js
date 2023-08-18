@@ -1,5 +1,3 @@
-let overlay = document.getElementsByClassName('loading-overlay')[0];
-
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/player_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
