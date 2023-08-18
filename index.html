@@ -1,6 +1,18 @@
- <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-</head> 
+
+<!doctype html>
+<html lang="fr" class="h-100">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- IMPORTANT : Pour éviter le référencement de la page -->
+        <meta name="robots" content="noindex">
+        <title>Portail ZLS | CPAM76.fr </title>
+        <!-- Chargement CSS  -->
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+     </head>
+
 <div class="loading-overlay">
   <span class="fas fa-spinner fa-3x fa-spin"></span>
 </div>
@@ -15,128 +27,4 @@
   </div>
 </div>
 
-<style>
-	body {
-  margin: 0 auto;
-}
-
-.loading-overlay {
-  display: flex;
-  background: rgba(0, 0, 0, 1);
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 9998;
-  align-items: center;
-  justify-content: center;
-}
-
-.loading-overlay.is-active {
-  display: none;
-}
-
-.loading-overlay.is-not-active {
-  display: none;
-}
-
-
-.video-container {
-  width: 100vw;
-  margin: 0rem;
-  box-sizing: border-box;
-  background-color: #dddddd;
-  display: inline-block;
-}
-
-.embed-container {
-	position: relative;
-	padding-bottom: 56.25%;
-	height: 0;
-	overflow: hidden;
-	max-width: 100%;
-}
-
-.embed-container iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-
-
-.ytpl-playing p {
-  display: block;
-}
-
-#ytpl-title,
-#ytpl-desc,#ytp-show-cards-title {
-  display: none;
-}
-</style>
-
-<script>
-let overlay = document.getElementsByClassName('loading-overlay')[0];
-//overlay.classList.toggle('is-active');
-
-
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/player_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-var players_list = ["ytpl-playerAM76"];
-
-function getPlaylistData(playerName) {
-    var apiKey = 'AIzaSyDI4rWo_wVAxRZEIgF6_8sRZDj8OCOZZ38';
-    var url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet';
-    var data = {
-        'playlistId': $('#' + playerName).data('pl'),
-        'key': apiKey
-    };
-    
-
-}
-
-
-// generate playlist items once main player has loaded
-function onPlayerReady(event) {
-      //setTimeout(overlay.classList.toggle('is-active'), 40000); 
-      getPlaylistData(event.target.name);     
-}
-
-
-function onYouTubeIframeAPIReady() {
-    setTimeout(overlay.classList.toggle('is-active'), 4000); 
-    for (item in players_list) {
-        players_list[item] = new YT.Player(players_list[item], {
-            playerVars: {
-                listType: 'playlist',
-                list: $('#' + players_list[item]).data('pl'),
-                autoplay: 1,
-                playsinline: 1, 
-                rel: 0, 
-                loop: 1, 
-                autopause: 0, 
-                modestbranding: 0, 
-                enablejsapi: 1, 
-                showinfo: 1,
-            },
-            events: {
-                'onReady': onPlayerReady,
-                'onStateChange': onPlayerStateChange
-            }
-        });
-    }
-}
-
-function onPlayerStateChange(event) {
-    var currentIndex = event.target.getPlaylistIndex();
-    if(currentIndex) { console.log("Dernier clip :"+currentIndex+"/"+event.target.getPlaylist().length);}
-    //console.log(currentIndex);
-  }
-
-
-</script>
+<script src="js/script_base.js"></script>
