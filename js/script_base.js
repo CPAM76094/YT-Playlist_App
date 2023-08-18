@@ -8,7 +8,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 var players_list = ["ytpl-playerAM76"];
 
 function getPlaylistData(playerName) {
-    var apiKey = process.env.API_KEY;
+    var apiKey = 'AIzaSyAE5ys6wCOxsBCqQ376izGfylErr9vZDBI';
     var url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet';
     var data = {
         'playlistId': $('#' + playerName).data('pl'),
