@@ -61,3 +61,4 @@ body {
 
 div:fullscreen .ytp-title-text .ytp-title-link .yt-uix-sessionlink .ytp-title .ytp-title-channel-logo .ytp-title-text .ytp-watch-later-icon .ytp-button .ytp-settings-button .ytp-hd-quality-badge .ytp-title-expanded-title  .ytp-youtube-button .ytp-button .yt-uix-sessionlink .ytp-menuitem-label .ytp-menuitem-content  .ytp-play-button .ytp-progress-list  .ytp-scrubber-button .ytp-swatch-background-color  .ytp-time-duration  .ytp-time-separator .ytp-time-current /*Not sure if you want to hide the current time, babe*/ .ytp-share-icon .ytp-pause-overlay .ytp-related-title .ytp-pause-overlay .ytp-suggestions  .ytp-expand-pause-overlay .ytp-fullscreen-button  .ytp-progress-bar-padding  .ytp-progress-bar .admin-bar .ytp-title-channel  .ytp-title-beacon  .ytp-chrome-top .ytp-show-watch-later-title .ytp-share-button-visible .ytp-show-share-title {
   display: none !important;
+}
