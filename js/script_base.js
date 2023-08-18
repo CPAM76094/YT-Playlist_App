@@ -1,4 +1,3 @@
-require('dotenv').config();
 
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/player_api";
