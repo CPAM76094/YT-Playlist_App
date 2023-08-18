@@ -1,6 +1,4 @@
 let overlay = document.getElementsByClassName('loading-overlay')[0];
-//overlay.classList.toggle('is-active');
-
 
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/player_api";
