@@ -40,7 +40,7 @@ function onYouTubeIframeAPIReady() {
                 rel: 0, 
                 loop: 1, 
                 autopause: 0, 
-                modestbranding: 0, 
+                modestbranding: 1, 
                 enablejsapi: 1, 
                 showinfo: 1,
             },
